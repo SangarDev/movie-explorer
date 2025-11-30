@@ -4,7 +4,8 @@ A React + Vite application to explore movies using the OMDb API. Search for movi
 # Live Demo: https://sangardev.github.io/movie-explorer/
 
 
-### ⚠️ Warning: Get your own OMDb API key before running this project
+### ⚠️ Warning: If you fork or download this project, you must get your own OMDb API key and replace it in the code before running it locally.
+
 
 ## 🚀 Features
 - Search movies by title
