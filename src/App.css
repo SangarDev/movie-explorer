@@ -1,0 +1,211 @@
+/* ---------- Global ---------- */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #121212;
+  color: #fff;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ---------- Navbar ---------- */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background-color: #1f1f1f;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar .logo h2 {
+  color: #ff6b6b;
+  margin: 0;
+}
+
+.navbar a {
+  margin-left: 1rem;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.navbar a:hover {
+  color: #ff4b4b;
+}
+
+/* ---------- Home / Search ---------- */
+.home {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.home form {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.searchInput {
+  width: 60%;
+  padding: 0.7rem 1rem;
+  border-radius: 6px 0 0 6px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+}
+
+.home button {
+  padding: 0.7rem 1rem;
+  border: none;
+  border-radius: 0 6px 6px 0;
+  background-color: #ff6b6b;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.home button:hover {
+  background-color: #ff4b4b;
+}
+
+/* ---------- Movie List / Cards ---------- */
+.movie-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1.5rem;
+}
+
+.movie-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* ensures button is visible */
+  background-color: #1f1f1f;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+  transition: transform 0.2s, box-shadow 0.2s;
+  text-align: center;
+  height: auto;           /* auto height for content */
+  min-height: 350px;      /* ensures cards aren't too short */
+  padding-bottom: 0.5rem;
+}
+
+.movie-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+}
+
+.movie-card img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 2/3;
+  object-fit: cover;
+  border-bottom: 1px solid #333;
+}
+
+.movie-card h3 {
+  font-size: 1rem;
+  margin: 0.5rem 0 0 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.movie-card p {
+  font-size: 0.9rem;
+  color: #bbbbbb;
+  margin: 0.3rem 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.movie-card a {
+  display: inline-block;
+  margin: 0.5rem auto 1rem auto; /* ensures fully visible */
+  padding: 0.4rem 0.8rem;
+  background-color: #ff6b6b;
+  border-radius: 6px;
+  color: #fff;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.movie-card a:hover {
+  background-color: #ff4b4b;
+}
+
+/* ---------- Movie Details Page ---------- */
+.movie-detail {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1rem;
+  background-color: #1f1f1f;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+}
+
+.movie-detail img {
+  width: 100%;
+  max-height: 450px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.movie-detail h2 {
+  margin-bottom: 0.5rem;
+  color: #ff6b6b;
+}
+
+.movie-detail p {
+  margin: 0.3rem 0;
+  line-height: 1.4;
+}
+
+/* ---------- Loading & Empty State ---------- */
+.loading,
+.empty {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-top: 2rem;
+  color: #ff6b6b;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+  .searchInput {
+    width: 70%;
+  }
+
+  .movie-card {
+    min-height: 300px;
+  }
+
+  .movie-card img {
+    height: 220px;
+  }
+}
+
+@media (max-width: 480px) {
+  .searchInput {
+    width: 60%;
+  }
+
+  .movie-card {
+    min-height: 250px;
+  }
+
+  .movie-card img {
+    height: 180px;
+  }
+}
